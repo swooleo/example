@@ -1,0 +1,6 @@
+{
+    "require": {
+        "swoole/ide-helper": "@dev",
+        "squizlabs/php_codesniffer": "*"
+    }
+}

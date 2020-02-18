@@ -1,3 +1,4 @@
 {
     "php-cs-fixer.onsave": true,
+    "catch2TestExplorer.executables": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests"
 }

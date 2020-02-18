@@ -62,7 +62,26 @@
             ]
         },
         {
-            "name": "core-tests",
+            "name": "core-tests master",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+            ],
+        },
+        {
+            "name": "core-tests worker",
             "type": "cppdbg",
             "request": "launch",
             "program": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests",

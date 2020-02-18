@@ -15,6 +15,7 @@ $start = microtime(true);
 $serv = new Server("127.0.0.1", 9501);
 $serv->set([
     "worker_num" => 1,
+    'max_queued_bytes' => 1024 * 1024 * 1024,
     "open_eof_check" => true,
     "package_eof" => "\r\n",
     'open_eof_split' => true // 开启这项，否则Server可能会把多个package合并成一个package

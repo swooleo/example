@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>upload</title>
+</head>
+<body>
+	<a href="gzdata">gzdata</a>
+	<h3>拖拽上传</h3>
+<script>
+    document.ondrop = document.ondragover = function (event) {
+        event.preventDefault();
+    };
+
+    document.body.parentNode.ondrop = function (event) {
+        upload(event.dataTransfer.files[0]);
+    };
+
+    function upload(file) {
+    	var ws = new WebSocket('ws://127.0.0.1:9501');
+    	ws.onmessage = function (e) {
+            console.log(e.data);
+        };
+
+        ws.onerror = ws.onclose = function () {
+            console.log('onclose');
+        };
+
+        ws.onopen = () => {
+            console.log('onopen');
+
+            var fileReader = new FileReader();
+            fileReader.onload = function () {
+                ws.send(fileReader.result);
+            };
+            fileReader.readAsArrayBuffer(file);
+        };
+    }
+</script>
+</body>
+</html>

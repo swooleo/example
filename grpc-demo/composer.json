@@ -1,0 +1,22 @@
+{
+    "name": "root/grpc-demo",
+    "authors": [
+        {
+            "name": "codinghuang",
+            "email": "2812240764@qq.com"
+        }
+    ],
+    "require": {
+        "google/protobuf": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Message\\": "Protobuf/Message",
+            "GPBMetadata\\": "Protobuf/GPBMetadata",
+            "RPC\\": "RPC"
+        }
+    },
+    "require-dev": {
+        "swoole/ide-helper": "^4.4"
+    }
+}

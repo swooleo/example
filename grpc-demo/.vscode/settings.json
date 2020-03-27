@@ -1,0 +1,24 @@
+{
+    "php.suggest.basic": false,
+    "editor.quickSuggestions": { "comments": true },
+    "editor.formatOnSaveTimeout": 10000,
+
+    "php-cs-fixer.rules": "@PhpCsFixer",
+    "php-cs-fixer.executablePath": "/root/codeDir/talCode/sidecar/vendor/bin/php-cs-fixer",
+    "php-cs-fixer.config": ".php_cs;.php_cs.dist",
+    "[php]": {
+      "editor.defaultFormatter": "junstyle.php-cs-fixer",
+      "editor.formatOnSave": false,
+    },
+
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/vendor/**/{Test,test,Tests,tests}/**/*Test.php"
+      ],
+}

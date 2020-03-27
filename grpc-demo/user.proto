@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package message;
+
+message User {
+    uint32 id = 1;
+    string username = 2;
+    uint32 age = 3;
+}

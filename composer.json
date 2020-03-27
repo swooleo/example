@@ -1,6 +1,7 @@
 {
     "require": {
         "swoole/ide-helper": "@dev",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "google/protobuf": "^3.11"
     }
 }

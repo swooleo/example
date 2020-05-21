@@ -62,6 +62,20 @@
             ]
         },
         {
+            "name": "attach worker",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "/usr/bin/php",
+            "processId": "76027",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "debug master (-n)",
             "type": "cppdbg",
             "request": "launch",
@@ -88,7 +102,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests",
-            "args": [],
+            "args": [
+                "--gtest_filter=log.date_format_long_string"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -107,7 +123,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests",
-            "args": [],
+            "args": [
+                "--gtest_filter=coroutine_socket.recv_success"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -130,7 +148,12 @@
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
-            "port": 9000
+            "port": 8000,
+            "hostname": "::",
+            "log": true,
+            "pathMappings": {
+                "/root/codeDir/phpCode/swoole/": "${workspaceFolder}"
+            },
         },
         {
             "name": "Launch currently open script",
@@ -138,7 +161,8 @@
             "request": "launch",
             "program": "${file}",
             "cwd": "${fileDirname}",
-            "port": 9000
+            "port": 8000,
+            "log": true,
         }
     ]
 }

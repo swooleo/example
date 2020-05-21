@@ -11,6 +11,5 @@
 use Swoole\Client;
 
 $client = new Client(SWOOLE_TCP);
-$client->connect('127.0.0.1', 9501);
-$client->send(str_repeat('a', 1 * 1024 * 1024) . "\r\n");
-sleep(100000);
+$client->connect('127.0.0.1', 9100);
+$client->send('here');

@@ -8,14 +8,15 @@
  * @FilePath: /swoole/http/server.php
  */
 
-$http = new Swoole\Http\Server('0.0.0.0', 9501, SWOOLE_PROCESS);
+$http = new Swoole\Http\Server('0.0.0.0', 9100, SWOOLE_PROCESS);
 
 $http->set([
     "worker_num" => 1,
-    'document_root' => '/root/codeDir/phpCode/swoole/http',
+    'document_root' => '/Users/hantaohuang/codeDir/phpCode/swoole/http',
     'enable_static_handler' => true,
     // 'http_index_files' => ['index.html', 'index.txt'],
     'http_autoindex' => true,
+    'open_http2_protocol' => true,
 ]);
 
 $http->on('request', function (Swoole\Http\Request $request, Swoole\Http\Response $response) {

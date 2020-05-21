@@ -1,4 +1,5 @@
 {
     "php-cs-fixer.onsave": true,
-    "catch2TestExplorer.executables": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests"
+    "testMate.cpp.log.logpanel": true,
+    "testMate.cpp.test.executables": "/root/codeDir/cppCode/swoole-src/core-tests/bin/core_tests"
 }

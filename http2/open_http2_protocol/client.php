@@ -11,7 +11,14 @@
 Swoole\Coroutine\run(function () {
     $cli = new Swoole\Coroutine\Http2\Client('127.0.0.1', 80);
     $cli->connect();
-    $streamId = $cli->send(new Swoole\Http2\Request);
+    $request = new Swoole\Http2\Request;
+    $request->headers = [
+        'user-agent' => 'Chrome/49.0.2587.3',
+        'accept' => 'text/html,application/xhtml+xml,application/xml',
+        'accept-encoding' => 'gzip'
+    ];
+    $request->data = 'http2 client';
+    $streamId = $cli->send($request);
     $response = $cli->recv();
     var_dump($response);
     $cli->close();

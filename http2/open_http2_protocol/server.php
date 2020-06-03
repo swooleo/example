@@ -16,16 +16,7 @@ $http->set([
 $http->on('workerStart', function () {
 });
 $http->on('request', function (Swoole\Http\Request $request, Swoole\Http\Response $response) {
-    $data = str_repeat('a', 1024);
-    $response->header('content-type', 'application/srpc');
-    $response->header('trailer', 'srpc-status, srpc-message');
-    $trailer = [
-        "srpc-status" => '0',
-        "srpc-status" => '1',
-    ];
-    foreach ($trailer as $trailer_name => $trailer_value) {
-        $response->trailer($trailer_name, $trailer_value);
-    }
-    $response->end($data);
+    var_dump($request->rawcontent());
+    $response->end('http2 server');
 });
 $http->start();
